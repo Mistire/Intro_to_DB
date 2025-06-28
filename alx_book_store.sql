@@ -34,13 +34,13 @@ CREATE TABLE IF NOT EXISTS Orders (
   FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
-CREATE TABLE IF NOT EXISTS Order_Detail (
+CREATE TABLE IF NOT EXISTS Order_Details (
   orderdetailid INT,
   customer_id INT,
   book_id INT,
-  quantity FLOAT,
+  quantity DOUBLE,
   PRIMARY KEY (orderdetailid)
-  FOREIGN KEY (customer_id) REFERENCES Cusotmers(customer_id),
+  FOREIGN KEY (order_id) REFERENCES Orders(order_id),
   FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );
 
