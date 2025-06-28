@@ -27,11 +27,11 @@ CREATE TABLE IF NOT EXISTS Customers (
 );
 
 CREATE TABLE IF NOT EXISTS Orders (
-  Order_id INT,
+  order_id INT,
   customer_id INT,
-  quantity FLOAT,
+  order_date DATE,
   PRIMARY KEY (order_id),
-  FOREIGN KEY (customer_id) REFERENCES Customers (customer_id)
+  FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
 );
 
 CREATE TABLE IF NOT EXISTS Order_Detail (
@@ -40,7 +40,7 @@ CREATE TABLE IF NOT EXISTS Order_Detail (
   book_id INT,
   quantity FLOAT,
   PRIMARY KEY (orderdetailid)
-  FOREIGN KEY (customer_id) REFERENCES Cusotmers (customer_id),
-  FOREIGN KEY (book_id) REFERENCES Books (book_id)
+  FOREIGN KEY (customer_id) REFERENCES Cusotmers(customer_id),
+  FOREIGN KEY (book_id) REFERENCES Books(book_id)
 );
 
